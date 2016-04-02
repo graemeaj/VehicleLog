@@ -12,4 +12,13 @@
     tools:context="com.example.graeme.vehiclelog.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:clickable="true"
+        android:contentDescription="ajgdfvajsgdj" />
 </RelativeLayout>
