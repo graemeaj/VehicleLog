@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/progressBar4"
             android:contextClickable="false"
-            android:progress="67"
+            android:progress="60"
             android:minWidth="250dp"
             android:layout_alignBottom="@+id/textView5"
             android:layout_alignParentRight="true"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
-            android:text="step 3 of 3"
+            android:text="step 4 of 5"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -70,6 +70,17 @@
             android:id="@+id/textView6"
             android:layout_below="@+id/progressBar4"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000-00-00"
+            android:id="@+id/textView11"
+            android:textColor="#0000FF"
+            android:onClick="showDatePicker"
+            android:layout_below="@+id/textView6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="96dp" />
 
     </RelativeLayout>
 </RelativeLayout>
