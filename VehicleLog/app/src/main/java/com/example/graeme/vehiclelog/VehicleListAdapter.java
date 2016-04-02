@@ -26,9 +26,15 @@ public class VehicleListAdapter extends ArrayAdapter<Vehicle>{
                     .inflate(R.layout.list_item, parent, false);
         }
 
+        Vehicle curVehicle = vehicles.get(position);
+
         TextView nameText = (TextView) convertView.findViewById(R.id.nameText);
         TextView yearText = (TextView) convertView.findViewById(R.id.yearText);
         TextView engineText = (TextView) convertView.findViewById(R.id.engineText);
+
+        nameText.setText(curVehicle.getName());
+        yearText.setText("Year: " + curVehicle.getYear());
+        engineText.setText("Engine: " + curVehicle.getEngineSize());
 
         return super.getView(position, convertView, parent);
     }
