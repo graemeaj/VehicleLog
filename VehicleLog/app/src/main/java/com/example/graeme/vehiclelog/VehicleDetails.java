@@ -1,11 +1,17 @@
 package com.example.graeme.vehiclelog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+import com.example.graeme.vehiclelog.model.Vehicle;
+
+import java.util.Calendar;
 
 public class VehicleDetails extends AppCompatActivity {
 
@@ -16,15 +22,39 @@ public class VehicleDetails extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ListView itemListView = (ListView) findViewById(R.id.itemListView);
+
+        ////////////////////////////////////////
+        // Set info from selection
+        setVehicle(DataProvider.getData().get(getIntent().getExtras().getInt("selectedVehicle")), itemListView);
+
+        ////////////////////////////////////////
+        // Go to Add Item Screen
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(VehicleDetails.this, AddItem.class);
+                startActivity(intent);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    private void setVehicle(Vehicle vehicle, ListView itemListView){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(vehicle.getExpiration());
+
+        String expieryDate = String.format("%d-%d-%d",
+                cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+
+        ((TextView) findViewById(R.id.yearValue)).setText(String.valueOf(vehicle.getYear()));
+        ((TextView) findViewById(R.id.engineValue)).setText(vehicle.getEngineSize());
+        ((TextView) findViewById(R.id.expiresValue)).setText(expieryDate);
+        ((TextView) findViewById(R.id.vinValue)).setText(vehicle.getVin());
+
+        VehicleItemListAdapter adapter = new VehicleItemListAdapter(
+                this, android.R.layout.simple_list_item_1, android.R.id.text1, vehicle.getItems());
+        itemListView.setAdapter(adapter);
+    }
 }

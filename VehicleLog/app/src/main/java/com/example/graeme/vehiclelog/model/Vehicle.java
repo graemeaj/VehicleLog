@@ -1,7 +1,9 @@
 package com.example.graeme.vehiclelog.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class Vehicle {
     private String name;
@@ -9,7 +11,7 @@ public class Vehicle {
     private String engineSize;
     private Date expiration;
     private String vin;
-    private HashMap<String, VehicleItem> items;
+    private List<VehicleItem> items;
 
     public Vehicle(String name, int year, String engineSize, Date expiration, String vin) {
         this.name = name;
@@ -17,6 +19,7 @@ public class Vehicle {
         this.engineSize = engineSize;
         this.expiration = expiration;
         this.vin = vin;
+        this.items = new ArrayList<>();
     }
 
     public String getName() {
@@ -57,5 +60,9 @@ public class Vehicle {
 
     public void setVin(String vin) {
         this.vin = vin;
+    }
+
+    public List<VehicleItem> getItems(){
+        return this.items;
     }
 }

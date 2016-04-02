@@ -4,7 +4,7 @@
                 android:layout_height="wrap_content">
 
     <TextView
-            android:id="@+id/nameText"
+            android:id="@+id/itemNameText"
             android:layout_width="175dp"
             android:layout_height="85dp"
             android:scaleType="fitStart"
@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/nameText"
-            android:layout_toRightOf="@id/nameText"
+            android:layout_toEndOf="@+id/itemNameText"
+            android:layout_toRightOf="@id/itemNameText"
             android:orientation="vertical"
             android:padding="10dp"
             android:layout_marginLeft="10dp"

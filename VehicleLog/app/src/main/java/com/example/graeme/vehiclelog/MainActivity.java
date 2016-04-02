@@ -9,7 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import com.example.graeme.vehiclelog.model.Vehicle;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,13 +25,28 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Vehicles");
         setSupportActionBar(toolbar);
+        final List<Vehicle> allVehicles = DataProvider.getData();
+
 
         ////////////////////////////////////////
         // Populate list view
         ListView listView = (ListView) findViewById(R.id.listView);
         VehicleListAdapter adapter = new VehicleListAdapter(
-                this, android.R.layout.simple_list_item_1, android.R.id.text1, DataProvider.getData());
+                this, android.R.layout.simple_list_item_1, android.R.id.text1, allVehicles);
         listView.setAdapter(adapter);
+
+        ////////////////////////////////////////
+        // On Item Click
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, VehicleDetails.class);
+
+                intent.putExtra("selectedVehicle", position);
+
+                startActivity(intent);
+            }
+        });
 
         ////////////////////////////////////////
         // Floating Add Vehicle Button

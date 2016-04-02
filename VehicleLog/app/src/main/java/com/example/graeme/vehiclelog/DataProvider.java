@@ -1,6 +1,7 @@
 package com.example.graeme.vehiclelog;
 
 import com.example.graeme.vehiclelog.model.Vehicle;
+import com.example.graeme.vehiclelog.model.VehicleItem;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,20 +11,20 @@ import java.util.List;
 public class DataProvider {
 
     private static List <Vehicle> data = new ArrayList<>();
-    private static Date expieryDate = new Date(Calendar.getInstance().getTimeInMillis());
+    private static Date expiryDate = new Date(Calendar.getInstance().getTimeInMillis());
 
     static {
         //String name, int year, String engineSize, Date expiration, String vin
-        data.add(new Vehicle("Honda Civic", 1997, "1.7L", new Date(2016,11,30),"NS7SH773983H7H976"));
-        data.add(new Vehicle("Yamaha sport boat", 2005, "75cc", new Date(2017,8,14),"823489729849"));
-        data.add(new Vehicle("Ford F-150", 2012, "3.8L", new Date(2019,2,15),"NS7SH773983H7H976"));
-        data.add(new Vehicle("ATV", 2010, "125cc", new Date(2012,5,17),"34234262626"));
-        data.add(new Vehicle("Honda Civic", 1997, "1.7L", new Date(2016,11,30),"NS7SH773983H7H976"));
-        data.add(new Vehicle("Yamaha sport boat", 2005, "75cc", new Date(2017,8,14),"823489729849"));
-        data.add(new Vehicle("Ford F-150", 2012, "3.8L", new Date(2019,2,15),"NS7SH773983H7H976"));
-        data.add(new Vehicle("ATV", 2010, "125cc", new Date(2012,5,17),"34234262626"));
+        data.add(new Vehicle("Honda Civic", 1997, "1.7L", getRandomDate(),"NS7SH773983H7H976"));
+        data.add(new Vehicle("Yamaha sport boat", 2005, "75cc", getRandomDate(),"823489729849"));
+        data.add(new Vehicle("Ford F-150", 2012, "3.8L", getRandomDate(),"NS7SH773983H7H976"));
+        data.add(new Vehicle("ATV", 2010, "125cc", getRandomDate(),"34234262626"));
+        data.add(new Vehicle("Honda Civic", 1997, "1.7L", getRandomDate(),"NS7SH773983H7H976"));
+        data.add(new Vehicle("Yamaha sport boat", 2005, "75cc", getRandomDate(),"823489729849"));
+        data.add(new Vehicle("Ford F-150", 2012, "3.8L", getRandomDate(),"NS7SH773983H7H976"));
+        data.add(new Vehicle("ATV", 2010, "125cc", getRandomDate(),"34234262626"));
 
-
+        data.get(0).getItems().add(new VehicleItem("Engine Oil", "10-W30", "Synthetic Only"));
     }
 
     public static List<Vehicle> getData(){
@@ -31,11 +32,19 @@ public class DataProvider {
     }
 
     public static Date getDate(){
-        return expieryDate;
+        return expiryDate;
     }
 
     public static void setDate(Date date){
-        expieryDate = date;
+        expiryDate = date;
+    }
+
+    private static Date getRandomDate(){
+        Calendar cal = Calendar.getInstance();
+
+        cal.set((int)(Math.random()*50) + 1966, (int)(Math.random()*12), (int)(Math.random()*28));
+
+        return new Date(cal.getTimeInMillis());
     }
 
 

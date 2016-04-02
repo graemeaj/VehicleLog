@@ -24,12 +24,12 @@ public class VehicleListAdapter extends ArrayAdapter<Vehicle>{
         // If list item is not allocated
         if(convertView == null){
             convertView = LayoutInflater.from(getContext())
-                    .inflate(R.layout.list_item, parent, false);
+                    .inflate(R.layout.list_vehicle, parent, false);
         }
 
         Vehicle curVehicle = vehicles.get(position);
 
-        TextView nameText = (TextView) convertView.findViewById(R.id.nameText);
+        TextView nameText = (TextView) convertView.findViewById(R.id.itemNameText);
         TextView yearText = (TextView) convertView.findViewById(R.id.yearText);
         TextView engineText = (TextView) convertView.findViewById(R.id.engineText);
 
