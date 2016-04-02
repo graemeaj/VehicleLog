@@ -12,4 +12,12 @@
     tools:context="com.example.graeme.vehiclelog.AddVehicleStep6"
     tools:showIn="@layout/activity_add_vehicle_step6">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Screen"
+        android:id="@+id/button6"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="191dp" />
 </RelativeLayout>

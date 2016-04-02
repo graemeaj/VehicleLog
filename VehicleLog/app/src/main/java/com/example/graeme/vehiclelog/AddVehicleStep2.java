@@ -19,8 +19,7 @@ public class AddVehicleStep2 extends AppCompatActivity {
         toolbar.setTitle("Add Vehicle");
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Button nextButton = (Button) findViewById(R.id.button);
+        Button nextButton = (Button) findViewById(R.id.button2);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
