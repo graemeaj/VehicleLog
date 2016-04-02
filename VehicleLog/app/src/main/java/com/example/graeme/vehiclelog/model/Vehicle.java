@@ -1,4 +1,4 @@
-package com.example.graeme.vehiclelog;
+package com.example.graeme.vehiclelog.model;
 
 import java.util.Date;
 import java.util.HashMap;

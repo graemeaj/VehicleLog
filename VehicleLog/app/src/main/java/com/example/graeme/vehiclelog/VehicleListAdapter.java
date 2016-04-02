@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import com.example.graeme.vehiclelog.model.Vehicle;
 
 import java.util.List;
 

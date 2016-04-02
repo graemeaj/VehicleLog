@@ -1,4 +1,4 @@
-package com.example.graeme.vehiclelog;
+package com.example.graeme.vehiclelog.model;
 
 public class VehicleItem {
     private String name;
