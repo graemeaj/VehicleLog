@@ -72,6 +72,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.graeme.vehiclelog.VehicleDetails" />
         </activity>
+        <activity
+            android:name=".AddVehicleStep4"
+            android:label="@string/title_activity_add_vehicle_step4"
+            android:parentActivityName=".AddVehicleStep3"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.AddVehicleStep3" />
+        </activity>
     </application>
 
 </manifest>
