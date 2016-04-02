@@ -8,4 +8,6 @@
     <string name="title_activity_vehicle_details">VehicleDetails</string>
     <string name="title_activity_add_item">AddItem</string>
     <string name="title_activity_add_vehicle_step4">AddVehicleStep4</string>
+    <string name="title_activity_add_vehicle_step5">AddVehicleStep5</string>
+    <string name="title_activity_add_vehicle_step6">AddVehicleStep6</string>
 </resources>

@@ -12,4 +12,74 @@
     tools:context="com.example.graeme.vehiclelog.AddVehicleStep3"
     tools:showIn="@layout/activity_add_vehicle_step3">
 
+    <RelativeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.example.graeme.vehiclelog.AddVehicleStep1"
+        tools:showIn="@layout/activity_add_vehicle_step1"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:id="@+id/button3"
+            android:layout_marginBottom="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar3"
+            android:contextClickable="false"
+            android:progress="67"
+            android:minWidth="250dp"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="13dp"
+            android:indeterminate="false"
+            android:layout_alignLeft="@+id/button3"
+            android:layout_alignStart="@+id/button3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:text="step 3 of 3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Vehicle Identification Number"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/progressBar3"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText5"
+            android:layout_below="@+id/textView4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp" />
+
+    </RelativeLayout>
 </RelativeLayout>

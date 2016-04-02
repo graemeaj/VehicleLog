@@ -81,6 +81,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.graeme.vehiclelog.AddVehicleStep3" />
         </activity>
+        <activity
+            android:name=".AddVehicleStep5"
+            android:label="@string/title_activity_add_vehicle_step5"
+            android:parentActivityName=".AddVehicleStep4"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.AddVehicleStep4" />
+        </activity>
+        <activity
+            android:name=".AddVehicleStep6"
+            android:label="@string/title_activity_add_vehicle_step6"
+            android:parentActivityName=".AddVehicleStep5"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.AddVehicleStep5" />
+        </activity>
     </application>
 
 </manifest>
