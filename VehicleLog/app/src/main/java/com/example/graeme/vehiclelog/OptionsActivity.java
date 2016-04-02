@@ -1,5 +1,6 @@
 package com.example.graeme.vehiclelog;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,11 @@ public class OptionsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
 
+    public void showDatePicker(View view) {
+        
+    }
 }

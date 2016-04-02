@@ -3,15 +3,15 @@ package com.example.graeme.vehiclelog;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Graeme on 2016-04-02.
- */
 public class DataProvider {
 
     private static List <Vehicle> data = new ArrayList<>();
+    private static Date expieryDate = new Date(Calendar.getInstance().getTimeInMillis());
+
     static {
         //String name, int year, String engineSize, Date expiration, String vin
         data.add(new Vehicle("Honda Civic", 1997, "1.7L", new Date(2016,11,30),"NS7SH773983H7H976"));
@@ -30,7 +30,13 @@ public class DataProvider {
         return data;
     }
 
+    public static Date getDate(){
+        return expieryDate;
+    }
 
+    public static void setDate(Date date){
+        expieryDate = date;
+    }
 
 
 }

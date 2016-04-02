@@ -17,16 +17,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="License Expiration: "
-        android:id="@+id/license"
+        android:id="@+id/licenseText"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker"
-        android:layout_below="@+id/license"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -36,7 +28,18 @@
         android:text="Notifications: "
         android:id="@+id/switch1"
         android:checked="false"
-        android:layout_alignBottom="@+id/datePicker"
+        android:layout_below="@+id/licenseText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000-00-00"
+            android:id="@+id/licenseDate"
+            android:textColor="#0000FF"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/licenseText"
+            android:layout_toEndOf="@+id/licenseText"
+            android:onClick="showDatePicker"/>
 </RelativeLayout>

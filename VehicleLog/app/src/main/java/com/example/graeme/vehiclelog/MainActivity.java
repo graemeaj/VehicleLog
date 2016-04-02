@@ -20,18 +20,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Vehicles");
         setSupportActionBar(toolbar);
+
+        ////////////////////////////////////////
+        // Populate list view
         ListView listView = (ListView) findViewById(R.id.listView);
-//        String[] items = (String[]) DataProvider.getData().toArray();
         VehicleListAdapter adapter = new VehicleListAdapter(
                 this, android.R.layout.simple_list_item_1, android.R.id.text1, DataProvider.getData());
         listView.setAdapter(adapter);
-        
+
+        ////////////////////////////////////////
+        // Floating Add Vehicle Button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addVehicle);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, AddVehicleStep1.class);
+                startActivity(intent);
             }
         });
     }
