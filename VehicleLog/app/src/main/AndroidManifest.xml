@@ -18,6 +18,60 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OptionsActivity"
+            android:label="@string/title_activity_options"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddVehicleStep1"
+            android:label="@string/title_activity_add_vehicle_step1"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddVehicleStep2"
+            android:label="@string/title_activity_add_vehicle_step2"
+            android:parentActivityName=".AddVehicleStep1"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.AddVehicleStep1" />
+        </activity>
+        <activity
+            android:name=".AddVehicleStep3"
+            android:label="@string/title_activity_add_vehicle_step3"
+            android:parentActivityName=".AddVehicleStep2"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.AddVehicleStep2" />
+        </activity>
+        <activity
+            android:name=".VehicleDetails"
+            android:label="@string/title_activity_vehicle_details"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddItem"
+            android:label="@string/title_activity_add_item"
+            android:parentActivityName=".VehicleDetails"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.graeme.vehiclelog.VehicleDetails" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">VehicleLog</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_options">OptionsActivity</string>
+    <string name="title_activity_add_vehicle_step1">AddVehicleStep1</string>
+    <string name="title_activity_add_vehicle_step2">AddVehicleStep2</string>
+    <string name="title_activity_add_vehicle_step3">AddVehicleStep3</string>
+    <string name="title_activity_vehicle_details">VehicleDetails</string>
+    <string name="title_activity_add_item">AddItem</string>
 </resources>
