@@ -14,6 +14,8 @@ import com.example.graeme.vehiclelog.model.Vehicle;
 import java.util.Calendar;
 
 public class VehicleDetails extends AppCompatActivity {
+    private int selectedVehicle;
+    private ListView itemListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +24,14 @@ public class VehicleDetails extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView itemListView = (ListView) findViewById(R.id.itemListView);
+        itemListView = (ListView) findViewById(R.id.itemListView);
 
         ////////////////////////////////////////
         // Set info from selection
-        setVehicle(DataProvider.getData().get(getIntent().getExtras().getInt("selectedVehicle")), itemListView);
+        if(getIntent().getExtras() != null) {
+            selectedVehicle = getIntent().getExtras().getInt("selectedVehicle");
+            setVehicle(DataProvider.getData().get(selectedVehicle), itemListView);
+        }
 
         ////////////////////////////////////////
         // Go to Add Item Screen
@@ -35,10 +40,20 @@ public class VehicleDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(VehicleDetails.this, AddItem.class);
+
+                intent.putExtra("selectedVehicle", selectedVehicle);
+
                 startActivity(intent);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        setVehicle(DataProvider.getData().get(selectedVehicle), itemListView);
     }
 
     private void setVehicle(Vehicle vehicle, ListView itemListView){
