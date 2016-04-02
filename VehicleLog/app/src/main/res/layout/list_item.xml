@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
+
+    <TextView
+            android:id="@+id/nameText"
+            android:layout_width="175dp"
+            android:layout_height="75dp"
+            android:scaleType="fitStart"
+            android:text="Item Name"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:textSize="24sp"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/nameText"
+            android:layout_toRightOf="@id/nameText"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
+
+        <TextView
+                android:id="@+id/yearText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year: 9999"
+                android:textSize="20sp" />
+
+        <TextView
+                android:id="@+id/engineText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engine: 000 L"
+                android:textSize="20sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
