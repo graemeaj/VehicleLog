@@ -48,7 +48,7 @@ public class AddVehicleStep4 extends AppCompatActivity {
                 cal.set(year, monthOfYear, dayOfMonth);
 
                 DataProvider.setDate(new Date(cal.getTimeInMillis()));
-                //updateLicenseText();
+                updateLicenseText();
             }
         };
         newFragment.show(getFragmentManager(), "datePicker");
@@ -63,7 +63,7 @@ public class AddVehicleStep4 extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        TextView dateText = (TextView) findViewById(R.id.licenseDate);
+        TextView dateText = (TextView) findViewById(R.id.textView11);
         dateText.setText(String.format("%d-%d-%d", year, month, day));
     }
 }
