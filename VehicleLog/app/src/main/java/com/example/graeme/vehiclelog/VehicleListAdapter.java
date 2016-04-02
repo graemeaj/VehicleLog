@@ -36,6 +36,6 @@ public class VehicleListAdapter extends ArrayAdapter<Vehicle>{
         yearText.setText("Year: " + curVehicle.getYear());
         engineText.setText("Engine: " + curVehicle.getEngineSize());
 
-        return super.getView(position, convertView, parent);
+        return convertView;
     }
 }

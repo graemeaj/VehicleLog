@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Vehicles");
         setSupportActionBar(toolbar);
+        ListView listView = (ListView) findViewById(R.id.listView);
+//        String[] items = (String[]) DataProvider.getData().toArray();
+        VehicleListAdapter adapter = new VehicleListAdapter(
+                this, android.R.layout.simple_list_item_1, android.R.id.text1, DataProvider.getData());
+        listView.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
