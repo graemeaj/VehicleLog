@@ -20,7 +20,7 @@ public class AddVehicleStep5 extends AppCompatActivity {
         toolbar.setTitle("Add Vehicle");
         setSupportActionBar(toolbar);
 
-        final Bundle b = new Bundle();
+        final Bundle b = getIntent().getExtras().getBundle("addVehicle");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button nextButton = (Button) findViewById(R.id.button5);

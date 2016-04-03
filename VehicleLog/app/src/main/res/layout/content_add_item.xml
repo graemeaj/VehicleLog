@@ -12,4 +12,57 @@
     tools:context="com.example.graeme.vehiclelog.AddItem"
     tools:showIn="@layout/activity_add_item">
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:id="@+id/lblAddItemName"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddItemName"
+            android:layout_below="@+id/lblAddItemName"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Description 1"
+            android:id="@+id/lblAddItemDescription1"
+            android:layout_below="@+id/txtAddItemName"
+            android:layout_centerHorizontal="true"/>
+
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddItemDescription1"
+            android:layout_below="@+id/lblAddItemDescription1"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Description 2"
+            android:id="@+id/lblAddItemDescription2"
+            android:layout_below="@+id/txtAddItemDescription1"
+            android:layout_centerHorizontal="true"/>
+
+    <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddItemDescription2"
+            android:layout_below="@+id/lblAddItemDescription2"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Item"
+            android:id="@+id/btnAddItem"
+            android:layout_below="@+id/txtAddItemDescription2"
+            android:layout_centerHorizontal="true"
+            android:onClick="addItem"/>
 </RelativeLayout>

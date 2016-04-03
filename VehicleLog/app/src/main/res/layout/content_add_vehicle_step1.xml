@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Add an identifier to the vehicle"
-        android:id="@+id/textView"
+        android:id="@+id/lblAddItemName"
         android:layout_below="@+id/progressBar"
         android:layout_centerHorizontal="true" />
 
@@ -54,7 +54,7 @@
         android:singleLine="true"
         android:textIsSelectable="false"
         android:transitionName="identifier"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/lblAddItemName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp" />
 
