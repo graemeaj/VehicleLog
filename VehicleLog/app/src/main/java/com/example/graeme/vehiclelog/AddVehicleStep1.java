@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class AddVehicleStep1 extends AppCompatActivity {
 
@@ -22,14 +23,21 @@ public class AddVehicleStep1 extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        final Bundle b = new Bundle();
+
+
         Button nextButton = (Button) findViewById(R.id.button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddVehicleStep1.this, AddVehicleStep2.class);
+                b.putString("name", ((EditText) findViewById(R.id.editText2)).getText().toString());
+                intent.putExtra("addVehicle", b);
                 startActivity(intent);
             }
         });
+
+
     }
 
 }

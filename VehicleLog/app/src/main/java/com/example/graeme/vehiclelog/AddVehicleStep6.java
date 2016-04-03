@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,15 +20,25 @@ public class AddVehicleStep6 extends AppCompatActivity {
         toolbar.setTitle("Add Vehicle");
         setSupportActionBar(toolbar);
 
+        final Bundle b = new Bundle();
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button nextButton = (Button) findViewById(R.id.button6);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddVehicleStep6.this, MainActivity.class);
+                addVehicle(b);
                 startActivity(intent);
+
             }
         });
+    }
+
+    private void addVehicle(Bundle b)
+    {
+        System.out.println(b.get("vin"));
+        Log.d("jhsd", b.getString("vin"));
     }
 
 }

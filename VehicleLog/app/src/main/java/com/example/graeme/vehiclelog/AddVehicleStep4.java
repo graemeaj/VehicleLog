@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.graeme.vehiclelog.model.DatePickerFragment;
@@ -27,12 +28,17 @@ public class AddVehicleStep4 extends AppCompatActivity {
         toolbar.setTitle("Add Vehicle");
         setSupportActionBar(toolbar);
 
+        final Bundle b = new Bundle();
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button nextButton = (Button) findViewById(R.id.button4);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddVehicleStep4.this, AddVehicleStep5.class);
+
+                b.putString("date", ((TextView) findViewById(R.id.textView11)).getText().toString());
+                intent.putExtra("addVehicle", b);
                 startActivity(intent);
             }
         });

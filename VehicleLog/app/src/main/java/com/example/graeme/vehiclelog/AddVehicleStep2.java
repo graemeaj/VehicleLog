@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class AddVehicleStep2 extends AppCompatActivity {
 
@@ -19,11 +20,15 @@ public class AddVehicleStep2 extends AppCompatActivity {
         toolbar.setTitle("Add Vehicle");
         setSupportActionBar(toolbar);
 
+        final Bundle b = getIntent().getExtras().getBundle("addVehicle");
+
         Button nextButton = (Button) findViewById(R.id.button2);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddVehicleStep2.this, AddVehicleStep3.class);
+                b.putString("year", ((EditText) findViewById(R.id.editText4)).getText().toString());
+                intent.putExtra("addVehicle", b);
                 startActivity(intent);
             }
         });
